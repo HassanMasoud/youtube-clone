@@ -12,6 +12,10 @@ class App extends Component {
     selectedVideo: null,
   };
 
+  componentDidMount() {
+    this.handleSubmit("Javascript");
+  }
+
   handleSubmit = async (searchTerm) => {
     const response = await youtube.get("search", { params: { q: searchTerm } });
     console.log(response.data.items);
