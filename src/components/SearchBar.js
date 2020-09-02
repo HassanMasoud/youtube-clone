@@ -13,6 +13,13 @@ class SearchBar extends Component {
     });
   };
 
+  handleSubmit = (e) => {
+    const { searchTerm } = this.state;
+    const { onFormSubmit } = this.props;
+    e.preventDefault();
+    onFormSubmit(searchTerm);
+  };
+
   render() {
     return (
       <Paper elevation={6} style={{ padding: "25px" }}>
