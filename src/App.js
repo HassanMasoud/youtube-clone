@@ -14,6 +14,7 @@ class App extends Component {
 
   handleSubmit = async (searchTerm) => {
     const response = await youtube.get("search", { params: { q: searchTerm } });
+    console.log(response.data.items);
 
     this.setState({
       videos: response.data.items,
